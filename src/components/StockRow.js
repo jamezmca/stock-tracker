@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../Stock.css';
 
 const StockRow = props => {
     const [xValues, setXValues] = useState([]);
@@ -28,11 +29,13 @@ const StockRow = props => {
 
 
     return (
-        <tr>
-            <td>{props.ticker.toUpperCase()}</td>
-            <td>{ yValues[0] }</td>
-            <td>{ xValues[0] }</td>
-        </tr>
+        <div className="stock-container">
+            <div className="stock-ticker">{props.ticker.toUpperCase()} </div>
+            <div className="stock-price">${yValues[0]} </div>
+            <div className="stock-datetime">{xValues[0]}</div>
+        </div>
+
+
     );
 };
 

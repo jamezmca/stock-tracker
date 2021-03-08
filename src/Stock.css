@@ -1,0 +1,16 @@
+.stock-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+
+.stock-ticker {
+    padding-right: 40px;
+
+}
+
+.stock-price {
+    padding-right: 40px;
+}
