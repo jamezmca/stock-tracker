@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import StockRow from './components/StockRow';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Price</th>
+              <th>Date & Time</th>
+              <th>Buy In</th>
+              <th>Quantity</th>
+              <th>Profit</th>
+              <th>Profit %</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <StockRow ticker="amzn" />
+            <StockRow ticker="crsr" />
+            <StockRow ticker="tsla" />
+            <StockRow ticker="pypl" />
+            <StockRow ticker="gme" />
+            <StockRow ticker="amc" />
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
