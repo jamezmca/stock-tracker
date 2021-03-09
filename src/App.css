@@ -51,10 +51,16 @@
   align-items: center;
   flex: 1;
   justify-content: space-between;
-  border: 2px solid white;
+  
   padding: 20px;
 }
 
 .stock-title {
   margin: 10px;
+}
+
+.stock-container {
+  border-bottom: 2px solid white;
+  width: 80%;
+  height: 40px;
 }
