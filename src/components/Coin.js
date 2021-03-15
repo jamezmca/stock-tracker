@@ -1,10 +1,10 @@
 import React from 'react';
 import '../Coin.css'
 
-
+//define page output from props
 const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap }) => {
 
-
+    //render layout
     return (
         <div className="coin-container">
             <div className="coin-row">

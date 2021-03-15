@@ -3,15 +3,12 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import Coin from './Coin';
 
-
-
-
 const CryptoRow = props => {
+    //initialize state
     const [coins, setCoins] = useState([]);
     const [search, setSearch] = useState("");
     
-
-
+    //run on render
     useEffect(() => {
         axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=market_cap_desc&per_page=100&page=1&sparkline=false")
         .then(response => {
@@ -23,6 +20,7 @@ const CryptoRow = props => {
         setSearch(e.target.value)
     };
 
+    //map through each coin to output them on screen
     const filteredCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()));
 
     return (
@@ -30,7 +28,10 @@ const CryptoRow = props => {
             <div className="coin-search">
                 <h1 className="coin-text">Search a currency</h1>
                 <form>
-                    <input type="text" placeholder="Search" className="coin-input" onChange={handleChange}/>
+                    <input type="text" 
+                    placeholder="Search" 
+                    className="coin-input" 
+                    onChange={handleChange}/>
                 </form>
             </div>
             {filteredCoins.map(coin => {
@@ -48,8 +49,6 @@ const CryptoRow = props => {
             })}
         </div>
     );
-
-
 };
 
 export default CryptoRow;
